@@ -94,9 +94,16 @@ const notifications=[
     }
 ]
 
+const getUser=  (id) => {
+    const User= users.find(user =>  user.id === id);
+    console.log(`User ${User}`)
+    return User;
+} 
+
 module.exports={
     tweets,
     users,
     notifications,
     stats,
+    getUser
 }

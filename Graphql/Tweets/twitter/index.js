@@ -1,5 +1,5 @@
 const { ApolloServer, gql} = require("apollo-server");
-const { tweets, users, notifications, stats } = require("./db");
+const { tweets, users, notifications, stats, getUser } = require("./db");
 const { typeDefs } = require("./schema");
 const { Tweet } = require("./resolvers/Tweet");
 const { Query } = require("./resolvers/Query");
@@ -14,11 +14,21 @@ const server = new ApolloServer({
         Mutation,
         Date: dateScalar,
     },
-    context:{
-        tweets,
-        users,
-        notifications,
-        stats,
+    introspection: true,
+    debug:false,
+    context:({req}) => {
+        const auth = (req.headers && req.headers.authorization) || '';
+        const Auth = getUser(auth)
+        console.log(`auth ${auth}`)
+        console.log(`Auth ${Auth && Auth.id}`)
+        
+       return  {
+            tweets,
+            users,
+            notifications,
+            stats,
+            Auth
+            };
     },
     csrfPrevention: true,
 });
