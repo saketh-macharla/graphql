@@ -1,0 +1,49 @@
+.Tweetcontain{
+    border: 1px solid #D3D3D3;
+    padding-left: 2rem;
+    width: 79%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contain{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    padding: 20px 10px;
+    border: 1px solid #D3D3D3;
+}
+
+.image{
+    height: 80px;
+    width: 80px;
+    margin-top: 2%;
+}
+
+.topcontain {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.topcontainleft{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topcontainleft img{
+    padding: 0px 5px;
+}
+
+.topcontainright{
+    color: grey;
+    margin-right: 3rem;
+}
+
+.bodycontain{
+    padding-left: 15px;
+    padding-bottom: 10px;
+    width: 96%;
+}
